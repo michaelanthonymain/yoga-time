@@ -1,9 +1,6 @@
 <div class="container">
-  <p>You are signed up for <%= @activity.description %> is:</p>
-
+  <p>You are signed up for <%= @activity.description %> at <%= @time %> </p>
   <p>The updated price is: $<%= @price_per_person %></p>
-
-  <p><%= @activity.description %> starts at <%= @time %></p>
   <p>Dont be late!</p>
 
   <form action="/activity/signup" method="get">

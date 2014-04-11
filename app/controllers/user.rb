@@ -5,7 +5,7 @@ get '/activity/signup' do
   @activity = Activity.find(6)
   @curr_price_person = @activity.price / @activity.participants.count
   @signup_price_person = @activity.price / (@activity.participants.count + 1)
-  @time = @activity.time.strftime("%I:%M")
+  @time = @activity.time.strftime("%I:%M on %a %b %d")
 
   erb :'user/index'
 end
