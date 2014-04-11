@@ -1,3 +1,7 @@
+get '/user/profile' do
+  erb :profile
+end
+
 enable 'sessions'
 
 get '/activity/signup' do
@@ -28,3 +32,4 @@ delete '/activity/delete/:id' do
 
   redirect '/activity/signup'
 end
+

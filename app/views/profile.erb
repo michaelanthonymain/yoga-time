@@ -1,0 +1,25 @@
+<div class="container">
+  <h3>Edit your profile</h3>
+
+  <!-- % if session[:user_id] %>
+    % @this_user = User.find(session[:user_id]) %>
+  % end %> -->
+
+  <table border="1" cellspacing="1" cellpadding="5">
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="modify"/></td> <!-- replace checkbox with link to convert field to editable area -->
+        <td rel="name[]"> %= @this_user.name %> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="modify" /></td>
+        <td rel="email[]"> %= @this_user.email %></td>
+      </tr>
+        <td colspan="3" align="right">
+          <button name="doModify">Modify</button> <!-- remove this button -->
+          <button name="save" disabled="disabled">Save</button> <!-- remove save button, field should autosave on enter or click away -->
+        </td>
+    </tbody>
+  </table>
+
+</div>
