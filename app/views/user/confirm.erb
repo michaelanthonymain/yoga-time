@@ -1,0 +1,17 @@
+<div class="container">
+  <p>You are signed up for <%= @activity.description %> is:</p>
+
+  <p>The updated price is: $<%= @price_per_person %></p>
+
+  <p><%= @activity.description %> starts at <%= @time %></p>
+  <p>Dont be late!</p>
+
+  <form action="/activity/signup" method="get">
+    <input type="submit" value="Logout">
+  </form>
+
+  <form action="/activity/delete/<%= @user_reg.id %>" method="post">
+    <input type="hidden" name="_method" value="delete"/>
+    <input type="submit" value="Delete"/><br><br>
+  </form>
+</div>
