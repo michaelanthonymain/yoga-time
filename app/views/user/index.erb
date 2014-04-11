@@ -1,0 +1,10 @@
+<div class="container">
+  <p>Joing us at <%= @time %> for <%= @activity.description %></p>
+  <p>The current price is: $<%= @curr_price_person %></p>
+  <p>The price if you sign up: $<%= @signup_price_person %></p>
+  <p>Dont be late!</p>
+
+  <form action="/activity/confirm" method="post">
+    <input type="submit" value="Sign Up!">
+  </form>
+</div>
