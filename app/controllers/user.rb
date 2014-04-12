@@ -20,10 +20,14 @@ post '/activity/confirm' do
   @activity = Activity.find(6)
   @time = @activity.time.strftime("%I:%M")
 
-  @user_reg = Registration.create(user_id: @user.id, activity_id: @activity.id)
-  @price_per_person = @activity.price / @activity.participants.count
+  @user_reg = Registration.new(user_id: @user.id, activity_id: @activity.id)
 
-  erb :'user/confirm'
+  if @user_reg.save
+    @price_per_person = @activity.price / @activity.participants.count
+    erb :'user/confirm'
+  else
+    redirect '/activity/signup'
+  end
 end
 
 delete '/activity/delete/:id' do
